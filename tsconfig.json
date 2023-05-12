@@ -8,7 +8,7 @@
     "lib": ["es2017", "DOM"],
     "strict": true,
     "esModuleInterop": false,
-    "outDir": "out-tsc",
+    "outDir": "dist",
     "rootDir": "./",
     "allowJs": true,
     "noImplicitAny": true
