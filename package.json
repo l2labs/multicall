@@ -8,8 +8,7 @@
   "main": "dist/index.esm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup --config rollup.config.js",
-    "publish": "npm publish --access public"
+    "build": "rollup --config rollup.config.js"
   },
   "keywords": [
     "ethers6",
