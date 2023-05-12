@@ -1,0 +1,23 @@
+{
+  "name": "@zkspace/multicall",
+  "version": "0.0.1",
+  "description": "Ethereum Multicall3. ethers6.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ethers6",
+    "ethers",
+    "multicall",
+    "multicall3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^3.21.6"
+  },
+  "dependencies": {
+    "ethers": "^6.3.0"
+  }
+}
