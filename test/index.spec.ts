@@ -1,4 +1,4 @@
-import { Contract, JsonRpcProvider } from 'ethers'
+// import { Contract, JsonRpcProvider } from 'ethers'
 
 it('测试 #1', async () => {
   const address = '0xf44CB548eF9B21E9D5798f2d7d78367b727D0c28'
