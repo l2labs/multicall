@@ -70,10 +70,15 @@ export async function call3All<T extends any[] = any[]>(
   const callCount = calls.length
   const callResult = [] as unknown as T
   for (let i = 0; i < callCount; i++) {
+    // @note: call fail
+    if (!response[i].success) {
+      callResult.push(null)
+      continue
+    }
+
     const outputs = calls[i].outputs
-    const returnData = response.returnData[i]
-    const param = Abi.decode(outputs, returnData)[0]
-    const result = param.success ? param.returnData : null
+    const params = Abi.decode(outputs, response[i].returnData)
+    const result = outputs.length === 1 ? params[0] : params
     callResult.push(result)
   }
   return callResult

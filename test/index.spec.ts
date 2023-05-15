@@ -17,7 +17,7 @@ describe('Test on zksync era:', () => {
     const usdcAddress = '0x4808abfa8058C91cbfD440d94C3631ba51CeB80F'
     const contract = new MulticallContract(usdcAddress, ERC20_ABI)
 
-    const [name, decimals] = await multiProvider.all([contract.name(), contract.decimals()])
+    const [name, decimals] = await multiProvider.all3([contract.name(), contract.decimals()])
     expect(name).to.eq('USDC')
     expect(decimals).to.eq(18n)
   })
