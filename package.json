@@ -1,6 +1,6 @@
 {
   "name": "@zkspace/multicall",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Ethereum Multicall3. ethers6.",
   "files": [
     "dist"
