@@ -18,7 +18,7 @@
     "multicall",
     "multicall3"
   ],
-  "author": "",
+  "author": "zh-kai <1998.zhangkai@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.0",
