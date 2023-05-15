@@ -3,6 +3,7 @@ import dts from 'rollup-plugin-dts'
 
 const config = [
   {
+    external: ['ethers'],
     input: 'src/index.ts',
     output: [
       {
@@ -13,7 +14,9 @@ const config = [
     ],
     plugins: [
       typescript({
-        tsconfig: './tsconfig.json',
+        compilerOptions: {
+          module: 'ES2020',
+        },
       }),
     ],
   },
