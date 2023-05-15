@@ -29,7 +29,8 @@ export async function callAll<T extends any[] = any[]>(
       callData,
     }
   })
-  const response = await multicall.aggregate(callRequests)
+
+  const response = await multicall.aggregate.staticCall(callRequests)
   const callCount = calls.length
   const callResult = [] as unknown as T
   for (let i = 0; i < callCount; i++) {
@@ -65,7 +66,7 @@ export async function call3All<T extends any[] = any[]>(
       callData,
     }
   })
-  const response = await multicall.aggregate(callRequests)
+  const response = await multicall.aggregate3.staticCall(callRequests)
   const callCount = calls.length
   const callResult = [] as unknown as T
   for (let i = 0; i < callCount; i++) {

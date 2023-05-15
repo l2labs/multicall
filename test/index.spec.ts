@@ -1,14 +1,24 @@
-// import { Contract, JsonRpcProvider } from 'ethers'
+import { JsonRpcProvider } from 'ethers'
+import { expect } from 'chai'
+import { MulticallProvider, MulticallContract } from '../src'
+import ERC20_ABI from './abi/erc20'
 
-it('测试 #1', async () => {
-  const address = '0xf44CB548eF9B21E9D5798f2d7d78367b727D0c28'
-  const FactoryAbi = ['function allPairs(uint) external view returns (address pair)']
-  // const provider = new JsonRpcProvider('https://testnet.era.zksync.dev', 280)
+describe('Test on zksync era:', () => {
+  // @note: init provider
+  const rpcUrl = 'https://testnet.era.zksync.dev'
+  const chainId = 280
+  const provider = new JsonRpcProvider(rpcUrl, chainId)
 
-  // const factoryContract = new Contract(address, FactoryAbi, provider)
+  // @note: init multicall provider
+  const multicallAddress = '0x89e4142A30450De077e35cE37f442712005B8c50'
+  const multiProvider = new MulticallProvider(provider, multicallAddress)
 
-  // const res = await factoryContract.allPairsLength()
-  // console.log(res)
+  it('ERC20 test:', async () => {
+    const usdcAddress = '0x4808abfa8058C91cbfD440d94C3631ba51CeB80F'
+    const contract = new MulticallContract(usdcAddress, ERC20_ABI)
+
+    const [name, decimals] = await multiProvider.all([contract.name(), contract.decimals()])
+    expect(name).to.eq('USDC')
+    expect(decimals).to.eq(18n)
+  })
 })
-
-// it('测试 #1', async () => {})
