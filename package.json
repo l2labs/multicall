@@ -1,6 +1,6 @@
 {
   "name": "@zkspace/multicall",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Ethereum Multicall3. ethers6.",
   "files": [
     "dist"
@@ -10,7 +10,8 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "mocha -c",
-    "build": "rollup --config rollup.config.js"
+    "build": "rollup -c",
+    "publish": "npm run build && npm version patch && npm publish"
   },
   "keywords": [
     "ethers6",
