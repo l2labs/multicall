@@ -6,7 +6,6 @@
     "dist"
   ],
   "main": "dist/index.esm.js",
-  "exports": "./dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "mocha -c",
